@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>新建 PK</title>
+</head>
+<body>
+    <div class="container">
+        <h1>新建 PK</h1>
+        <div class="form">
+		<p class="tip">利用本工具自助生成用于新建 PK 的机器人指令，生成后私信发给机器人即可使用。机器人会返回 PK <i>编号</i>，请您在 PK 结束后主动通过“/pk 删除 <<i>编号</i>>”删除，感谢您的配合。</p>
+            <label for="name" required>PK 名：</label>
+            <input type="text" id="name">
+            <label for="groups" required>群号 (多个群以,隔开)：</label>
+            <input type="text" id="groups">
+            <h2>我方</h2>
+			<label for="item_id">商品 ID：</label>
+            <input type="text" id="item_id">
+            <label for="pk_group">选择分组：</label>
+            <select id="pk_group">
+                <option value="">无</option>
+            </select>
+            <h2>对方</h2>
+            <div id="opponentContainer">
+			    <div class="group-header">
+					<p class="opponent-name">对手名</p>
+					<p class="opponent-item-id">商品 IDs (以,隔开)</p>
+					<p class="opponent-group">组</p>
+					<p class="delete-opponent"></p>
+				</div>
+                <!-- 对手信息动态生成的部分 -->
+            </div>
+            <button id="addOpponent">新建对手</button>
+            <h2>分组</h2>
+            <div id="groupContainer">
+			    <div class="group-header">
+					<p class="group-title">组名</p>
+					<p class="group-coefficient">系数</p>
+					<p class="delete-group"></p>
+				</div>
+                <!-- 分组信息动态生成的部分 -->
+            </div>
+            <button id="addGroup">新建分组</button>
+            <textarea id="commandResult" rows="4" readonly></textarea>
+        </div>
+		<div class="generate-container">
+            <button id="generateCommand">生成指令</button>
+            <button id="copyCommand">复制指令</button>
+		</div>
+		<p class="tip-bottom">
+			本体：<a href="https://github.com/Lawaxi/ShitBoyWebAssistant" target="_blank">
+							Lawaxi/ShitBoyWebAssistant on GitHub
+						</a>
+			机器人搭建：<a href="https://github.com/mamoe/mirai" target="_blank">
+							mamoe/mirai on GitHub
+						</a><a href="https://github.com/Lawaxi/ShitBoy" target="_blank">
+							Lawaxi/ShitBoy on GitHub
+						</a><a href="https://github.com/Lawaxi/ShitBoyWeidianAddon" target="_blank">
+							Lawaxi/ShitBoyWeidianAddon on GitHub
+						</a>
+		</p>
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
